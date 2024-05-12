@@ -1,0 +1,48 @@
+@font-face {
+  font-family: "SB_light";
+  src: url("./font/SB_light.ttf");
+}
+@font-face {
+  font-family: "SB_bold";
+  src: url("./font/SB_bold.ttf");
+}
+@font-face {
+  font-family: "SB_medium";
+  src: url("./font/SB_medium.ttf");
+}
+
+body {
+  margin: 0;
+  font-family: "SB_light";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+* {
+  margin: 0;
+  overscroll-behavior: none;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+.slick-center {
+  -webkit-transform: scale(1.3);
+  -moz-transform: scale(1.3);
+  transform: scale(1.3);
+  transition: 0.5s ease;
+}
+.slick-slide {
+  scale: 0.7;
+  transition: 0.5s ease;
+}
+.slick-dots {
+  bottom: 85% !important;
+  text-align: left !important;
+  overflow-x: scroll;
+}
+.slick-dots li {
+  padding: 12px !important;
+}
+.slick-list {
+  padding: 5px !important;
+}

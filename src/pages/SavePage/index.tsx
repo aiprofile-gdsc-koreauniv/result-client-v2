@@ -9,7 +9,9 @@ import { ImageIndex } from "../../recoil";
 import Slider from "react-slick";
 import { Bg } from "../MainPage/style";
 import { useEffect, useMemo, useState } from "react";
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { withSuccess } from "antd/es/modal/confirm";
 export const SavePage = () => {
   const { id } = useParams();
   const { data, isLoading, isError } = useSingleProject(id ?? "");
@@ -28,7 +30,14 @@ export const SavePage = () => {
     setCurrentSlide(currentSlide);
     setSelectedImageUrl(data?.imageUrls[currentSlide]);
   };
-
+  const handleCopyClipBoard = async () => {
+    try {
+      await navigator.clipboard.writeText("horangstudio.com");
+      toast.success("호랑이 사진관 링크가 복사되었어요.");
+    } catch (err) {
+      console.log(err);
+    }
+  };
   const onClickDownload = async () => {
     try {
       const imgURL = data?.imageUrls[currentSlide]; // 이미지 URL 가져오기
@@ -111,10 +120,23 @@ export const SavePage = () => {
           </div>
 
           <ButtonsContainer>
+            <ToastContainer
+              position="bottom-center"
+              autoClose={1500}
+              hideProgressBar
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              theme="colored"
+            />
             <CustomButton
               textColor="white"
               bgColor="gray"
               style={{ width: "40vw", fontSize: "17px" }}
+              onClick={() => handleCopyClipBoard()}
             >
               공유하기
             </CustomButton>

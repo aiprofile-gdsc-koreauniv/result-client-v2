@@ -67,7 +67,7 @@ export const MyPage = () => {
           <ErrorCard />
         ))}
       </StyledProjectsWrapper>
-      {pendingProjects ? <LoadingBar /> : <></>}
+      {pendingProjects?.length > 0 ? <LoadingBar /> : <></>}
       <CustomFooter />
     </div>
   );

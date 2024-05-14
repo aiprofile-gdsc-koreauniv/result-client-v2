@@ -46,3 +46,7 @@ code {
 .slick-list {
   padding: 5px !important;
 }
+
+.slick-current {
+  padding-top: 40px;
+}

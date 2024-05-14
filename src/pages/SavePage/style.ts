@@ -4,6 +4,7 @@ export const StyledSavePageWrapper = styled.div`
   background-color: black;
   min-height: 100vh;
   width: 100%;
+  min-width: 390px;
   max-width: 440px;
   position: relative;
 `;
@@ -30,7 +31,7 @@ export const ButtonsContainer = styled.div`
   justify-content: center;
   gap: 10px;
   position: absolute;
-  bottom: 115px;
+  bottom: 8%;
   width: 85%;
   left: 8%;
 `;

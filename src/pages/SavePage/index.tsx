@@ -33,9 +33,12 @@ export const SavePage = () => {
   const handleCopyClipBoard = async () => {
     try {
       await navigator.clipboard.writeText("horangstudio.com");
-      toast.success("호랑이 사진관 링크가 복사되었어요.");
+      await toast.success("호랑이 사진관 링크가 복사되었어요.", {
+        containerId: "share",
+      });
     } catch (err) {
       console.log(err);
+      toast.error("링크 복사 오류");
     }
   };
   const onClickDownload = async () => {
@@ -55,8 +58,10 @@ export const SavePage = () => {
       if (link.parentNode) {
         link.parentNode.removeChild(link);
       }
+      await toast.success("사진 저장 완료", { containerId: "save" });
     } catch (error) {
       console.error("Error downloading image:", error);
+      toast.error("사진 저장 오류");
     }
   };
 
@@ -121,7 +126,7 @@ export const SavePage = () => {
 
           <ButtonsContainer>
             <ToastContainer
-              position="bottom-center"
+              position="top-center"
               autoClose={1500}
               hideProgressBar
               newestOnTop={false}
@@ -131,6 +136,20 @@ export const SavePage = () => {
               draggable
               pauseOnHover
               theme="colored"
+              containerId="share"
+            />
+            <ToastContainer
+              position="top-center"
+              autoClose={1500}
+              hideProgressBar
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              theme="colored"
+              containerId="save"
             />
             <CustomButton
               textColor="white"

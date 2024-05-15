@@ -14,6 +14,7 @@ import { useSingleProject } from "../../api";
 import { ImageIndex, ProjectId } from "../../recoil";
 import { useRecoilState, useRecoilValue } from "recoil";
 import JSZip from "jszip";
+import { ToastContainer, toast } from "react-toastify";
 export const DetailPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -52,8 +53,10 @@ export const DetailPage = () => {
       if (link.parentNode) {
         link.parentNode.removeChild(link);
       }
+      toast.success("사진 저장 완료");
     } catch (error) {
       console.error("Error downloading images:", error);
+      toast.error("사진 저장 오류");
     }
   };
 
@@ -67,6 +70,18 @@ export const DetailPage = () => {
     <>
       <StyledDetailPageWrapper>
         <TopBar title={title} iconType="arrow" />
+        <ToastContainer
+          position="top-center"
+          autoClose={1500}
+          hideProgressBar
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="colored"
+        />
         <ImagesWrapper>
           {data?.imageUrls.map((imageUrl: string, index: number) => {
             return (

@@ -34,13 +34,9 @@ export const LoadingBar = () => {
         <>
           요청하신 이미지 생성 대기중입니다
           <Spin indicator={<LoadingOutlined style={{ fontSize: 24 }} spin />} />
-          {remainingTime !== null ? (
+          {remainingTime !== null && (
             <div style={{ color: "gray", fontSize: "0.7em" }}>
               약 {remainingTime}분 남음
-            </div>
-          ) : (
-            <div style={{ color: "gray", fontSize: "0.7em" }}>
-              시간 불러오는 중...
             </div>
           )}
         </>

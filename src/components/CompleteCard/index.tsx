@@ -11,6 +11,7 @@ export const CompleteCard = ({
   imgUrl,
   onClick,
 }: CompleteCardProps) => {
+  const formattedDate = new Date(date).toISOString().split('T')[0];
   return (
     <StyledCardWrapper imgUrl={imgUrl} onClick={onClick}>
       <ImageOverlay />
@@ -20,7 +21,7 @@ export const CompleteCard = ({
           <div>2024 석탑대동제</div>
           <div>#{index}</div>
         </div>
-        <div style={{ color: "gray", fontSize: "1em" }}>{date}</div>
+        <div style={{ color: "gray", fontSize: "1em" }}>{formattedDate}</div>
       </CompleteCardTextWrapper>
     </StyledCardWrapper>
   );

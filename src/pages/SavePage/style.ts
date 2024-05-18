@@ -31,8 +31,8 @@ export const ButtonsContainer = styled.div`
   justify-content: center;
   gap: 10px;
   position: absolute;
-  bottom: 8%;
+  bottom: 12%;
   width: 85%;
-  left: 8%;
+  left: 5%;
 `;
 export const StyledPaging = styled.a``;

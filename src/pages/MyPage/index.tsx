@@ -45,7 +45,7 @@ export const MyPage = () => {
       setErrorProjects(data.error);
     }
   }, [data]);
-
+  if (isLoading) return <SmallLottie />;
   return (
     <div style={{ width: "100%" }}>
       <LogoTopBar />
@@ -55,7 +55,6 @@ export const MyPage = () => {
         <InfoCircleOutlined />
         <InfoText>AI 특성상 얼굴이 깨질 수 있으니 조심하세요</InfoText>
       </Info>
-      {isLoading && <SmallLottie />}
       <StyledProjectsWrapper>
         {completedProjects?.map((project: any, index: number) => (
           <CompleteCard

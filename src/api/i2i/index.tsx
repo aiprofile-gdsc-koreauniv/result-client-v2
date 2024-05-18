@@ -44,3 +44,16 @@ export const useSingleProject = (id: string) => {
 
   return { data, isLoading, isError };
 };
+
+export const useServiceStatus = () => {
+  const queryFn = async () => {
+    const res = await API.get("/ops/service");
+    if (res) return res.data;
+    throw new Error("Failed to fetch service status");
+  };
+
+  return useQuery({
+    queryKey: ["status"],
+    queryFn,
+  });
+};

@@ -15,6 +15,9 @@ export const LottieWrapper = styled.div`
   font-family: SB_light;
 `;
 export const Subtext = styled.div`
-  font-size: 8px;
+  font-size: 13px;
   color: lightgray;
+`;
+export const MainText = styled.div`
+  font-size: 20px;
 `;

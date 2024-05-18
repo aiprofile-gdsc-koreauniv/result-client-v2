@@ -11,10 +11,11 @@ import {
 } from "./style";
 import { RightOutlined } from "@ant-design/icons";
 import { useSingleProject } from "../../api";
-import { ImageIndex, ProjectId } from "../../recoil";
+import { ImageIndex, OriginalImages, ProjectId } from "../../recoil";
 import { useRecoilState, useRecoilValue } from "recoil";
 import JSZip from "jszip";
 import { ToastContainer, toast } from "react-toastify";
+import { useEffect } from "react";
 export const DetailPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -22,7 +23,11 @@ export const DetailPage = () => {
 
   const [selectedImage, setSelectedImage] = useRecoilState(ImageIndex);
   const projectId = useRecoilValue(ProjectId);
+  const [originalImages, setOriginalImages] = useRecoilState(OriginalImages);
   const title = `2024 석탑대동제 #${projectId}`;
+  useEffect(() => {
+    setOriginalImages(data?.originalImageUrls);
+  }, [data]);
 
   const onClickDownload = async () => {
     const imgURLs = data?.imageUrls; // 이미지 URL 가져오기

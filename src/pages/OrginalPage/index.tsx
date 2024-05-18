@@ -1,7 +1,14 @@
 import { easeInOut, motion } from "framer-motion";
-import { StyledImagesWrapper, StyledOriginalPageWrapper } from "./style";
+import {
+  StyledImagesWrapper,
+  StyledOriginalImg,
+  StyledOriginalPageWrapper,
+} from "./style";
 import { TopBar } from "../../components";
+import { useRecoilState } from "recoil";
+import { OriginalImages } from "../../recoil";
 export const OriginalPage = () => {
+  const [originalImages, setOriginalImages] = useRecoilState(OriginalImages);
   return (
     <StyledOriginalPageWrapper>
       <motion.div
@@ -15,7 +22,13 @@ export const OriginalPage = () => {
           iconPosition="right"
         />
         <StyledImagesWrapper>
-          <div></div>
+          {originalImages.map((imageUrl, index) => (
+            <StyledOriginalImg
+              key={index}
+              src={imageUrl}
+              alt={`Image ${index}`}
+            />
+          ))}
         </StyledImagesWrapper>
       </motion.div>
     </StyledOriginalPageWrapper>

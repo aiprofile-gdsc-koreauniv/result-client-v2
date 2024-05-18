@@ -8,7 +8,13 @@ export const StyledOriginalPageWrapper = styled.div`
   justify-content: center;
 `;
 export const StyledImagesWrapper = styled.div`
-  height: 50vh;
+  height: auto;
   width: 100vw;
   text-align: center;
+`;
+export const StyledOriginalImg = styled.img`
+  max-width: 30%;
+  height: auto;
+  border-radius: 10px;
+  margin: 5px;
 `;

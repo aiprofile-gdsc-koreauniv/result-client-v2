@@ -40,7 +40,13 @@ export const MyPage = () => {
   }, [user]);
   useEffect(() => {
     if (data) {
-      setCompletedProjects(data.completed);
+      const sortedCompletedProjects = [...data.completed].sort((a, b) => {
+        const dateA = new Date(a.requestedAt).getTime();
+        const dateB = new Date(b.requestedAt).getTime();
+        return dateB - dateA;
+      });
+      console.log(sortedCompletedProjects);
+      setCompletedProjects(sortedCompletedProjects);
       setPendingProjects(data.pending);
       setErrorProjects(data.error);
     }

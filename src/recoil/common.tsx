@@ -16,6 +16,11 @@ export const ProjectId = atom({
   key: "projectId", // Unique key for the atom
   default: 0, // Initial value of the imageUrl state
 });
+
+export const OriginalImages = atom({
+  key: "original",
+  default: [],
+});
 {
   /* 문법 :
 const [age,setTest] = useRecoilState(TestAtom)

@@ -113,7 +113,7 @@ export const MainPage = () => {
                   navigate("/mypage");
                 }}
               >
-                프로필 사진 새로 만들기
+                완성된 프로필 확인하기
               </ContinueBtn>
               <GoToResultBtn>
                 <BtnIcon src={"/logo/Tiger.svg"} />

@@ -7,7 +7,6 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   background: #fff;
-  max-width: 440px;
 `;
 export const Top = styled.div`
   width: 100%;

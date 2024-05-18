@@ -34,7 +34,7 @@ import {
 } from "./style";
 
 import { CustomFooter } from "../../components/CustomFooter";
-import { Checkbox } from "antd";
+
 export type userInfoProps = {
   name: any;
   email: any;
@@ -54,27 +54,18 @@ export const MainPage = () => {
     if (!firebase.auth()?.currentUser?.email) signInGoogle();
   };
   useEffect(() => {
-    if (user && loginClicked) {
+    if (user.email && loginClicked) {
       navigate("/mypage");
     }
   }, [user, loginClicked]);
   useEffect(() => {
     auth.onAuthStateChanged(async (firebaseUser) => {
       if (firebaseUser) {
-        const token = await firebase.auth()?.currentUser?.getIdToken();
-
-        if (token) {
-          setUser({
-            name: firebase.auth()?.currentUser?.displayName ?? "",
-            email: firebase.auth()?.currentUser?.email ?? "",
-            imgUrl:
-              firebase.auth()?.currentUser?.photoURL ??
-              "https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg",
-            token: token ?? "",
-          });
-        }
-      } else {
-        setUser({ name: "", email: "", token: "", imgUrl: "" });
+        setUser({
+          name: firebase.auth()?.currentUser?.displayName ?? "",
+          email: firebase.auth()?.currentUser?.email ?? "",
+          imgUrl: firebase.auth()?.currentUser?.photoURL ?? "",
+        });
       }
     });
   }, []);

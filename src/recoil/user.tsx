@@ -5,7 +5,6 @@ export const userInfo = atom({
     name: "",
     email: "",
     imgUrl: "",
-    token: "",
   },
 });
 

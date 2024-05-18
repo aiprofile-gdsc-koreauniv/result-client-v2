@@ -83,7 +83,7 @@ export const MyPage = () => {
       <GoToHomeBtn onClick={() => window.open("https://horangstudio.com/")}>
         프로필 사진 새로 만들기 <RightOutlined />
       </GoToHomeBtn>
-      {pendingProjects?.length > 0 ? <LoadingBar /> : <></>}
+      {/* {pendingProjects?.length > 0 ? <LoadingBar /> : <></>} */}
       <CustomFooter />
     </div>
   );

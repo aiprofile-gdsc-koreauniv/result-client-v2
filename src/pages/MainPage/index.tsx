@@ -66,6 +66,12 @@ export const MainPage = () => {
           email: firebase.auth()?.currentUser?.email ?? "",
           imgUrl: firebase.auth()?.currentUser?.photoURL ?? "",
         });
+      } else {
+        setUser({
+          name: "",
+          email: "",
+          imgUrl: "",
+        });
       }
     });
   }, []);
@@ -127,6 +133,7 @@ export const MainPage = () => {
                 <DetailText
                   onClick={() => {
                     auth.signOut();
+                    console.log(1);
                   }}
                 >
                   로그아웃 하기

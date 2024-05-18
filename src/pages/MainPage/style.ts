@@ -14,10 +14,10 @@ export const OverlayContainer = styled.div`
 `;
 export const WhiteOverlay = styled.div`
   position: absolute;
-  top: 59%;
+  top: 70%;
   left: 0;
   width: 100%;
-  height: 42%;
+  height: 34%;
   background: linear-gradient(to bottom, transparent 0%, white 61%);
   z-index: 1;
 `;
@@ -104,7 +104,7 @@ export const ContinueBtn = styled.div`
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
   color: var(--white, #fff);
   font-family: Roboto;
-  font-size: 19px;
+  font-size: 17px;
   font-style: normal;
   font-weight: 500;
   line-height: 150%; /* 24px */
@@ -127,7 +127,7 @@ export const GoToResultBtn = styled.div`
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
   color: var(--red, #d81921);
   font-family: Roboto;
-  font-size: 16px;
+  font-size: 17px;
   font-style: normal;
   font-weight: 500;
   line-height: 150%; /* 24px */
@@ -135,7 +135,7 @@ export const GoToResultBtn = styled.div`
 `;
 export const ResultBtnText = styled.p`
   font-family: Roboto;
-  font-size: 19px;
+  font-size: 17px;
   font-style: normal;
   font-weight: 700;
   line-height: 150%; /* 24px */
@@ -180,7 +180,7 @@ export const GoogleBtn = styled.div`
 export const GoogleBtnText = styled.p`
   color: var(--black, #212121);
   font-family: Roboto;
-  font-size: 19px;
+  font-size: 17px;
   font-style: normal;
   font-weight: 700;
   line-height: 150%; /* 24px */

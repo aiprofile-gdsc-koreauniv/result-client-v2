@@ -7,3 +7,4 @@ export * from "./LoadingBar";
 export * from "./LogoTopBar";
 export * from "./ProfileBar";
 export * from "./CustomFooter";
+export * from "./SmallLottie";

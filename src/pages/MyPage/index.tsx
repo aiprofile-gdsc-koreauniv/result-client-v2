@@ -6,6 +6,7 @@ import {
   LogoTopBar,
   PendingCard,
   ProfileBar,
+  SmallLottie,
 } from "../../components";
 import { InfoCircleOutlined, RightOutlined } from "@ant-design/icons";
 import animationData from "../../assets/lottie/loading.json";
@@ -15,17 +16,14 @@ import { ProjectId, userInfo } from "../../recoil";
 import { useEffect, useState } from "react";
 import { useAllProjects } from "../../api";
 import {
-  CustomLottie,
   GoToHomeBtn,
   Info,
   InfoText,
-  LottieWrapper,
   StyledProjectsWrapper,
   StyledTitle,
 } from "./style";
 
 import { useRecoilState } from "recoil";
-import Lottie from "react-lottie-player";
 
 export const MyPage = () => {
   const navigate = useNavigate();
@@ -57,13 +55,7 @@ export const MyPage = () => {
         <InfoCircleOutlined />
         <InfoText>AI 특성상 얼굴이 깨질 수 있으니 조심하세요</InfoText>
       </Info>
-      {isLoading && (
-        <LottieWrapper>
-          <CustomLottie animationData={animationData} play loop />
-          <img src="/logo/Tiger.svg" />
-          <div>사진 가져오는 중입니다</div>
-        </LottieWrapper>
-      )}
+      {isLoading && <SmallLottie />}
       <StyledProjectsWrapper>
         {completedProjects?.map((project: any, index: number) => (
           <CompleteCard

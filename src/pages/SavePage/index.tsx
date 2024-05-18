@@ -13,6 +13,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { withSuccess } from "antd/es/modal/confirm";
 import { Copy } from "../../components/Copy";
+import Lottie from "react-lottie-player";
 export const SavePage = () => {
   const { id } = useParams();
   const { data, isLoading, isError } = useSingleProject(id ?? "");
@@ -108,7 +109,7 @@ export const SavePage = () => {
     arrows: false,
   };
 
-  if (isLoading) return <StatusText>이미지를 가져오고 있습니다</StatusText>;
+  if (isLoading) return <Lottie />;
   if (isError)
     return (
       <StatusText>오류가 발생했습니다. 담당자에게 문의해주세요</StatusText>

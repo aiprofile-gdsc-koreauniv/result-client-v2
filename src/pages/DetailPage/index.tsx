@@ -1,5 +1,5 @@
 import { useNavigate, useParams } from "react-router-dom";
-import { CustomButton, TopBar } from "../../components";
+import { CustomButton, SmallLottie, TopBar } from "../../components";
 import {
   CheckOriginalText,
   DownloadText,
@@ -60,7 +60,7 @@ export const DetailPage = () => {
     }
   };
 
-  if (isLoading) return <StatusText>이미지를 가져오고 있습니다</StatusText>;
+  if (isLoading) return <SmallLottie />;
   if (isError)
     return (
       <StatusText>오류가 발생했습니다. 담당자에게 문의해주세요</StatusText>

@@ -43,18 +43,3 @@ export const GoToHomeBtn = styled.div`
   letter-spacing: -0.304px;
   margin-bottom: 15px;
 `;
-
-export const CustomLottie = styled(Lottie)`
-  width: 50px;
-
-  margin-top: 30px;
-`;
-export const LottieWrapper = styled.div`
-  width: 100%;
-  height: 400px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 10px;
-  align-items: center;
-`;

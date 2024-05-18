@@ -12,13 +12,14 @@ import { useEffect, useMemo, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { withSuccess } from "antd/es/modal/confirm";
+import { Copy } from "../../components/Copy";
 export const SavePage = () => {
   const { id } = useParams();
   const { data, isLoading, isError } = useSingleProject(id ?? "");
   const [initialImageIdx, setInitialImageIndex] = useRecoilState(ImageIndex);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [selectedImageUrl, setSelectedImageUrl] = useState("");
-
+  const [copied, setCopied] = useState(false);
   useEffect(() => {
     if (!initialImageIdx || !data?.imageUrls) return;
     if (initialImageIdx !== -1) {
@@ -33,6 +34,7 @@ export const SavePage = () => {
   const handleCopyClipBoard = async () => {
     try {
       await navigator.clipboard.writeText("horangstudio.com");
+      setCopied(true);
       await toast.success("호랑이 사진관 링크가 복사되었어요.", {
         containerId: "share",
       });
@@ -41,6 +43,7 @@ export const SavePage = () => {
       toast.error("링크 복사 오류");
     }
   };
+
   const onClickDownload = async () => {
     try {
       const imgURL = data?.imageUrls[currentSlide]; // 이미지 URL 가져오기
@@ -64,23 +67,29 @@ export const SavePage = () => {
       toast.error("사진 저장 오류");
     }
   };
+  useEffect(() => {
+    if (copied) {
+      const timer = setTimeout(() => {
+        setCopied(false);
+      }, 1500);
 
+      return () => clearTimeout(timer);
+    }
+  }, [copied]);
   const customPaging = useMemo(
     () =>
       function (i: any) {
         const ImageSrc = data?.imageUrls[i];
         return (
-          <div style={{ width: "100%", padding: "10px" }}>
-            <a>
-              <img
-                src={ImageSrc}
-                style={{
-                  height: "10vh",
-                  borderRadius: "3px",
-                  filter: currentSlide === i ? "none" : "brightness(20%)",
-                }}
-              />
-            </a>
+          <div style={{ width: "100%" }}>
+            <img
+              src={ImageSrc}
+              style={{
+                height: "10vh",
+                borderRadius: "3px",
+                filter: currentSlide === i ? "none" : "brightness(20%)",
+              }}
+            />
           </div>
         );
       },
@@ -96,6 +105,7 @@ export const SavePage = () => {
     slidesToScroll: 1,
     initialSlide: initialImageIdx,
     afterChange: handleSlideChange,
+    arrows: false,
   };
 
   if (isLoading) return <StatusText>이미지를 가져오고 있습니다</StatusText>;
@@ -123,7 +133,7 @@ export const SavePage = () => {
               })}
             </Slider>
           </div>
-
+          {copied ? <Copy text="링크가 복사되었어요!" /> : <></>}
           <ButtonsContainer>
             <ToastContainer
               position="top-center"

@@ -8,6 +8,7 @@ export const StyledLogoTopBarWrapper = styled.div`
   padding: 20px;
   font-family: SB_medium;
   height: 56px;
+  cursor: pointer;
 `;
 
 export const StyledTitle = styled.div``;

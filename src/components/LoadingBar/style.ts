@@ -7,7 +7,7 @@ export const StyledLoadingBarWrapper = styled.div`
   justify-content: center;
   align-items: center;
   gap: 20px;
-  padding: 10px;
+  padding: 7px;
   background-color: ${BLACK};
   opacity: 90%;
   color: white;

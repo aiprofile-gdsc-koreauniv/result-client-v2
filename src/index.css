@@ -16,11 +16,9 @@ body {
   font-family: "SB_light";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  box-sizing: border-box;
 }
 * {
   margin: 0;
-  overscroll-behavior: none;
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
@@ -40,8 +38,19 @@ code {
   bottom: 85% !important;
   text-align: left !important;
   overflow-x: scroll;
+  white-space: nowrap;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .slick-current {
   padding-top: 10px;
+}
+.slick-dots li {
+  padding: 3px !important;
+  margin: 0px 14px !important;
+}
+.slick-list {
+  padding: 5px !important;
 }

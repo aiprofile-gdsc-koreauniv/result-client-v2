@@ -119,10 +119,11 @@ export const MainPage = () => {
                   navigate("/mypage");
                 }}
               >
+                <BtnIcon src={"/logo/Tiger.svg"} />
                 완성된 프로필 확인하기
               </ContinueBtn>
               <GoToResultBtn>
-                <BtnIcon src={"/logo/Tiger.svg"} />
+                <BtnIcon src={"/logo/N.svg"} />
                 <ResultBtnText
                   onClick={() => window.open("https://horangstudio.com/")}
                 >
@@ -148,7 +149,7 @@ export const MainPage = () => {
                   <GoogleBtnText>로그인하고 결과 확인하기</GoogleBtnText>
                 </GoogleBtn>
                 <GoToResultBtn>
-                  <BtnIcon src={"/logo/Tiger.svg"} />
+                  <BtnIcon src={"/logo/N.svg"} />
                   <ResultBtnText
                     onClick={() => window.open("https://horangstudio.com/")}
                   >

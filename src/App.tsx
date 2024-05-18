@@ -4,8 +4,7 @@ import { RecoilRoot } from "recoil";
 import "./App.css";
 import { DetailPage, MyPage, MainPage, SavePage, OriginalPage } from "./pages";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { CustomFooter } from "./components";
-import styled from "styled-components";
+
 const queryClient = new QueryClient();
 function Content() {
   return (

@@ -16,6 +16,7 @@ body {
   font-family: "SB_light";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
 }
 * {
   margin: 0;
@@ -40,13 +41,7 @@ code {
   text-align: left !important;
   overflow-x: scroll;
 }
-.slick-dots li {
-  padding: 12px !important;
-}
-.slick-list {
-  padding: 5px !important;
-}
 
 .slick-current {
-  padding-top: 40px;
+  padding-top: 10px;
 }

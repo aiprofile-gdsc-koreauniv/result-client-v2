@@ -15,3 +15,7 @@ export const LottieWrapper = styled.div`
   gap: 10px;
   align-items: center;
 `;
+export const Subtext = styled.div`
+  font-size: 8px;
+  color: lightgray;
+`;

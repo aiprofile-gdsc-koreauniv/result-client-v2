@@ -29,9 +29,9 @@ export const PendingCard = ({ index }: PendingCardProps) => {
         2024 석탑대동제 #{index}
       </div>
       <div style={{ color: "white", fontSize: "1em" }}>이미지 생성 중</div>
-      <div style={{ color: "gray", fontSize: "0.7em" }}>
+      {/* <div style={{ color: "gray", fontSize: "0.7em" }}>
         {remainingTime !== null ? `약 ${remainingTime}분 남음` : "시간 불러오는 중..."}
-      </div>
+      </div> */}
     </StyledCardWrapper>
   );
 };

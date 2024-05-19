@@ -134,7 +134,7 @@ export const SavePage = () => {
               })}
             </Slider>
           </div>
-          {copied ? <Copy text="링크가 복사되었어요!" /> : <></>}
+          {/* {copied ? <Copy text="링크가 복사되었어요!" /> : <></>} */}
           <ButtonsContainer>
             <ToastContainer
               position="top-center"

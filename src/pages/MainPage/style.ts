@@ -17,7 +17,7 @@ export const WhiteOverlay = styled.div`
   top: 70%;
   left: 0;
   width: 100%;
-  height: 34%;
+  height: 30%;
   background: linear-gradient(to bottom, transparent 0%, white 61%);
   z-index: 1;
 `;
@@ -87,7 +87,7 @@ export const Continue = styled.div`
   flex-direction: column;
   min-height: 40vh;
 
-  padding: 20px 15px;
+  padding: 0px 15px;
 `;
 export const ContinueBtn = styled.div`
   cursor: pointer;

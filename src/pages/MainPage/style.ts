@@ -74,6 +74,7 @@ export const Slide = styled.img`
   justify-content: center;
   align-items: center;
   border-radius: 8px;
+  margin-right: 10px;
 `;
 export const Bg = styled.div`
   min-height: 100vh;

@@ -27,9 +27,7 @@ export const Logo = styled.img`
 `;
 export const Text = styled.p`
   color: var(--black, #212121);
-
-  /* aggro sb 16 */
-  font-family: SB Aggro;
+  font-family: SB_medium;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;

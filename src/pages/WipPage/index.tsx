@@ -1,15 +1,25 @@
 import React from "react";
 import styled from "styled-components";
-import { Container, Desc, DescRed, Question, Title } from "./style";
+import {
+  Container,
+  Desc,
+  DescRed,
+  Left,
+  Logo,
+  Question,
+  Title,
+  Top,
+  Text,
+} from "./style";
 export const WipPage = () => {
   return (
     <Container>
-      {/* <Top>
+      <Top>
         <Left>
           <Logo src={"/logo/Tiger.svg"} />
           <Text>호랑이 사진관</Text>
         </Left>
-      </Top> */}
+      </Top>
       <Question src={"/img/question.svg"} />
       <Title>서비스 준비 중입니다.</Title>
       <Desc>

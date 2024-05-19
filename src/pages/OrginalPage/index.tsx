@@ -1,5 +1,6 @@
 import { easeInOut, motion } from "framer-motion";
 import {
+  OriginalTitleText,
   StyledImagesWrapper,
   StyledOriginalImg,
   StyledOriginalPageWrapper,
@@ -7,6 +8,8 @@ import {
 import { TopBar } from "../../components";
 import { useRecoilState } from "recoil";
 import { OriginalImages } from "../../recoil";
+import { Tooltip } from "antd";
+import { InfoCircleOutlined } from "@ant-design/icons";
 export const OriginalPage = () => {
   const [originalImages, setOriginalImages] = useRecoilState(OriginalImages);
   return (
@@ -17,10 +20,18 @@ export const OriginalPage = () => {
         transition={{ delay: 0.2, duration: 0.3, ease: easeInOut }}
       >
         <TopBar
-          title={"사용된 원본 이미지"}
+          title={
+            <OriginalTitleText>
+              사용된 원본 이미지
+              <Tooltip title={"원본 이미지는 따로 보관되지 않습니다"}>
+                <InfoCircleOutlined />
+              </Tooltip>
+            </OriginalTitleText>
+          }
           iconType={"close"}
           iconPosition="right"
         />
+
         <StyledImagesWrapper>
           {originalImages.map((imageUrl, index) => (
             <StyledOriginalImg

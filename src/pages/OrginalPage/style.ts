@@ -18,3 +18,9 @@ export const StyledOriginalImg = styled.img`
   border-radius: 10px;
   margin: 5px;
 `;
+export const OriginalTitleText = styled.div`
+  display: flex;
+  justify-content: center;
+  align-itmes: center;
+  gap: 5px;
+`;

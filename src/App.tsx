@@ -20,19 +20,6 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useServiceStatus } from "./api";
 
 const queryClient = new QueryClient();
-
-function Content() {
-  return (
-    <Routes>
-      <Route path="/" element={<MainPage />} />
-      <Route path="/mypage" element={<MyPage />} />
-      <Route path="/mypage/:id" element={<DetailPage />} />
-      <Route path="/mypage/:id/save" element={<SavePage />} />
-      <Route path="/mypage/:id/original" element={<OriginalPage />} />
-    </Routes>
-  );
-}
-
 const ServiceStatusContext = createContext(null);
 
 export const useServiceStatusContext = () => useContext(ServiceStatusContext);

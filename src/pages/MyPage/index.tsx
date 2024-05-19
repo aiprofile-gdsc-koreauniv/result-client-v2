@@ -72,7 +72,9 @@ export const MyPage = () => {
           <CompleteCard
             index={extractNumberFromTitle(project.title)}
             imgUrl={project.thumbnailUrl}
-            date={project.requestedAt}
+            date={new Date(
+              new Date(project.requestedAt).getTime() + 9 * 60 * 60 * 1000
+            ).toString()}
             onClick={() => {
               setSelectedProjectId(extractNumberFromTitle(project.title));
               navigate(`/mypage/${project.id}`);

@@ -29,7 +29,7 @@ export const ServiceStatusProvider = ({ children }: any) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!isLoading && !isError && data?.serviceState !== "preparing") {
+    if (!isLoading && !isError && data?.serviceState === "preparing") {
       navigate("/wip");
     }
   }, [data, isLoading, isError, navigate]);

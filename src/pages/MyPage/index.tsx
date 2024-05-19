@@ -35,6 +35,12 @@ export const MyPage = () => {
 
   const { data, isLoading } = useAllProjects();
 
+  function extractNumberFromTitle(title: string): number {
+    const regex = /#(\d+)/;
+    const match = title.match(regex);
+    return match ? +match[1] : 0;
+  }
+
   useEffect(() => {
     if (!user.email) navigate("/");
   }, [user]);
@@ -62,19 +68,19 @@ export const MyPage = () => {
         <InfoText>AI 특성상 얼굴이 깨질 수 있으니 조심하세요</InfoText>
       </Info>
       <StyledProjectsWrapper>
-        {completedProjects?.map((project: any, index: number) => (
+        {completedProjects?.map((project: any) => (
           <CompleteCard
-            index={index + 1}
+            index={extractNumberFromTitle(project.title)}
             imgUrl={project.thumbnailUrl}
             date={project.requestedAt}
             onClick={() => {
-              setSelectedProjectId(index + 1);
+              setSelectedProjectId(extractNumberFromTitle(project.title));
               navigate(`/mypage/${project.id}`);
             }}
           />
         ))}
-        {pendingProjects?.map((project: any, index: number) => (
-          <PendingCard index={index + 1} />
+        {pendingProjects?.map((project: any) => (
+          <PendingCard index={extractNumberFromTitle(project.title)} />
         ))}
         {errorProjects?.map((project: any, index: number) => (
           <ErrorCard />

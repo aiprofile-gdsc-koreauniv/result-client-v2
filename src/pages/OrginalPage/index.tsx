@@ -23,7 +23,11 @@ export const OriginalPage = () => {
           title={
             <OriginalTitleText>
               사용된 원본 이미지
-              <Tooltip title={"원본 이미지는 따로 보관되지 않습니다"}>
+              <Tooltip
+                title={
+                  "원본 이미지는 개인정보처리방침에 따라 이벤트 종료 후 바로 삭제됩니다. 또한 철저한 보안절차를 통해 안전하게 보관됩니다."
+                }
+              >
                 <InfoCircleOutlined />
               </Tooltip>
             </OriginalTitleText>

@@ -44,6 +44,7 @@ const PagingImagesList = [
   "/img/Paging2.png",
   "/img/Paging3.png",
   "/img/Paging4.png",
+  "/img/Paging5.png",
 ];
 export const MainPage = () => {
   const [user, setUser] = useRecoilState(userInfo);

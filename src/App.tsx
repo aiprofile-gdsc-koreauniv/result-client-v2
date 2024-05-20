@@ -34,7 +34,7 @@ export const ServiceStatusProvider = ({ children }: any) => {
     }
   }, [data, isLoading, isError, navigate]);
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <div style={{ textAlign: "center" }}>Loading...</div>;
   if (isError) return <div>Error loading service status</div>;
 
   return (
